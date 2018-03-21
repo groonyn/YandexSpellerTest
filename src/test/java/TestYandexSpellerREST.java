@@ -12,14 +12,14 @@ import static core.YandexSpellerConstants.*;
 public class TestYandexSpellerREST {
 
     @DataProvider
-    public Object[][] testData() {
+    public Object[][] SpellTestData() {
         return new Object[][]{
                 {WRONG_CITY_NEW_YORK, CITY_NEW_YORK_LIST},
                 {WRONG_TOMATO, TOMATO_LIST}
         };
     }
 
-    @Test(dataProvider = "testData")
+    @Test(dataProvider = "SpellTestData")
     public void checkFixingTypos(String sentText, String expectedText) {
         List<YandexSpellerAnswer> answersList =
                 YandexSpellerApi.getYandexSpellerAnswers(YandexSpellerApi
